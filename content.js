@@ -22,12 +22,17 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
 
         // Check for first version of Google Patents
         if ((/patents.google.com\/\?q/).test(url)) {
+            
             // Find elements containing patent data
             patentlinks = document.querySelectorAll('h4.metadata span:nth-child(2)');
 
+            if (patentlinks.length > 1) {
+                results = '';
+            }
+
             // Remove HTML and build list of patent numbers
             for (var index = 0 ; index < patentlinks.length ; index++) {
-                var results = results + String(patentlinks[index].textContent) + '<br>';
+                results = results + String(patentlinks[index].textContent) + '<br>';
 
             }
         }
@@ -36,6 +41,10 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
         else if ((/tbm=pts/).test(url)) {
             // Find elements containing patent data
             patentlinks = document.querySelectorAll('._Rm');
+
+            if (patentlinks.length > 1) {
+                results = '';
+            }
 
             // Check for advertisement in first element and skip it
             if (!((/google.com/).test(patentlinks[0].textContent))) {

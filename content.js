@@ -17,7 +17,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
         
 
         var url = window.location.href;
-        var results = '';
+        var results = 'N/A';
         var patentlinks = '';
 
         // Check for first version of Google Patents

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name":    "Google Patent Results Brief Listing",
+  "version": "0.0",
+  "offline_enabled": true,
+
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*"],
+    "js":         ["content.js"],
+    "run_at":     "document_idle",
+    "all_frames": false
+  }],
+
+  "page_action": {
+    "default_title": "Google Patent Results Brief Listing",
+    "default_icon": {"19": "img/icon19.png"},
+    "default_popup": "popup.html"
+  }
+
+  // No special permissions required...
+  //"permissions": []
+}

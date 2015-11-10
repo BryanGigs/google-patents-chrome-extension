@@ -1,9 +1,11 @@
+// Copyright (c) 2015 by Bryan Giglio. All rights reserved.
+
 // Update the relevant fields with the new data
 function setDOMInfo(info) {
   document.getElementById('results').innerHTML = info.contents;
   //document.getElementById('total').textContent = info.total;
   //document.getElementById('url').textContent = info.url;
-}
+};
 
 // Once the DOM is ready...
 window.addEventListener('DOMContentLoaded', function () {
@@ -21,3 +23,13 @@ window.addEventListener('DOMContentLoaded', function () {
         setDOMInfo);
   });
 });
+
+// Send pageview data to Google analytics
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-69937631-1', 'auto');
+ga('set', 'checkProtocolTask', function(){});
+ga('send', 'pageview', '/popup.html');

@@ -1,3 +1,5 @@
+// Copyright (c) 2015 by Bryan Giglio. All rights reserved.
+
 {
   "manifest_version": 2,
   "name":    "Google Patent Results Brief Listing - Beta",
@@ -20,7 +22,9 @@
     "default_title": "Google Patent Results Brief Listing",
     "default_icon": {"19": "img/icon19.png"},
     "default_popup": "popup.html"
-  }
+  },
+
+  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 
   // No special permissions required...
   //"permissions": []

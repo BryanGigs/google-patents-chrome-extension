@@ -45,8 +45,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
                 var patenturl = String(patentlinks[index].textContent);
 
                 results = results + patenturl.replace('www.google.com/patents/', '').replace('?cl=en', '') + '<br>';
-
-                patentlinks[index] = (String(patentlinks[index].textContent)).replace('www.google.com/patents/', '');
             }
         };
 

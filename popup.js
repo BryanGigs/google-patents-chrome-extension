@@ -1,8 +1,8 @@
 // Update the relevant fields with the new data
 function setDOMInfo(info) {
-  document.getElementById('total').textContent   = info.total;
-  document.getElementById('inputs').textContent  = info.inputs;
-  document.getElementById('buttons').textContent = info.buttons;
+  document.getElementById('results').innerHTML = info.contents;
+  //document.getElementById('total').textContent = info.total;
+  //document.getElementById('url').textContent = info.url;
 }
 
 // Once the DOM is ready...

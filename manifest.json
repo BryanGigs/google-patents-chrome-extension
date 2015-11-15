@@ -1,31 +1,31 @@
 // Copyright (c) 2015 by Bryan Giglio. All rights reserved.
 
 {
-  "manifest_version": 2,
-  "name":    "Google Patent Results Brief Listing - Beta",
-  "version": "0.1",
-  "offline_enabled": true,
+    "manifest_version": 2,
+    "name":    "Google Patent Results Brief Listing - Beta",
+    "version": "0.1",
+    "offline_enabled": true,
 
-  "background": {
-    "persistent": false,
-    "scripts": ["background.js"]
-  },
+    "background": {
+        "persistent": false,
+        "scripts": ["background.js"]
+    },
 
-  "content_scripts": [{
-    "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*"],
-    "js":         ["content.js"],
-    "run_at":     "document_idle",
-    "all_frames": false
-  }],
+    "content_scripts": [{
+        "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*"],
+        "js":         ["content.js"],
+        "run_at":     "document_idle",
+        "all_frames": false
+    }],
 
-  "page_action": {
-    "default_title": "Google Patent Results Brief Listing",
-    "default_icon": {"19": "img/icon19.png"},
-    "default_popup": "popup.html"
-  },
+    "page_action": {
+        "default_title": "Google Patent Results Brief Listing",
+        "default_icon": {"19": "img/icon19.png"},
+        "default_popup": "popup.html"
+    },
 
-  "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
+    "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
 
-  // No special permissions required...
-  //"permissions": []
+    // No special permissions required...
+    //"permissions": []
 }

@@ -1,7 +1,6 @@
 // Copyright (c) 2015 by Bryan Giglio. All rights reserved.
 
-// Inform the background page that 
-// this tab should have a page-action
+// Inform the background page that this tab should have a page-action
 chrome.runtime.sendMessage({
     from:    'content',
     subject: 'showPageAction'

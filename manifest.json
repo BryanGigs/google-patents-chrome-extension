@@ -1,9 +1,9 @@
-// Copyright (c) 2015 by Bryan Giglio. All rights reserved.
+// Copyright (c) 2015-2016 by Bryan Giglio. All rights reserved.
 
 {
     "manifest_version": 2,
     "name":    "Google Patent Results Brief Listing - Beta",
-    "version": "0.1",
+    "version": "0.2",
     "offline_enabled": true,
 
     "background": {
@@ -12,7 +12,7 @@
     },
 
     "content_scripts": [{
-        "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*"],
+        "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*", "*://scholar.google.com/*"],
         "js":         ["content.js"],
         "run_at":     "document_idle",
         "all_frames": false

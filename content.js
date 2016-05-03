@@ -1,4 +1,4 @@
-// Copyright (c) 2015 by Bryan Giglio. All rights reserved.
+// Copyright (c) 2015-2016 by Bryan Giglio. All rights reserved.
 
 // Inform the background page that this tab should have a page-action
 chrome.runtime.sendMessage({
@@ -56,6 +56,25 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
 
                 results = results + patenturl.replace('www.google.com/patents/', '').replace('?cl=en', '') + '<br>';
             }
+        }
+
+        // Check for Patents within Google Scholar Results    
+        else if ((/scholar.google.com\/scholar\?/).test(url)) {
+            // Find elements containing patent data
+            patentlinks = document.querySelectorAll('h3.gs_rt > a');
+            console.log(patentlinks);
+            if (patentlinks.length > 1) {
+                results = '';
+            };
+
+            // Remove HTML and junk and build list of patent numbers
+            for (var index = 0 ; index < patentlinks.length ; index++) {
+                var patenturl = String(patentlinks[index].href);
+                console.log('Link #' + index + ' '+ patenturl);
+                if ((/www.google.com\/patents/).test(patenturl)) {
+                    results = results + patenturl.replace('www.google.com/patents/', '').replace('https://', '').replace('http://', '') + '<br>';
+                };
+            };
         };
 
         var domInfo = {

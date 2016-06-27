@@ -1,5 +1,4 @@
 {
-    // Copyright (c) 2015-2016 by Bryan Giglio. All rights reserved.
     "manifest_version": 2,
     "name": "Patent Results Listing",
     "version": "0.0.2",
@@ -24,7 +23,7 @@
     },
 
     "content_security_policy": "script-src 'self' https://www.google-analytics.com; object-src 'self'"
-
+    // Copyright (c) 2015-2016 by Bryan Giglio. All rights reserved.
     // No special permissions required...
     //"permissions": []
 }

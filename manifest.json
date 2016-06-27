@@ -1,7 +1,7 @@
 {
     // Copyright (c) 2015-2016 by Bryan Giglio. All rights reserved.
     "manifest_version": 2,
-    "name": "Google Patent Results Brief Listing",
+    "name": "Patent Results Listing",
     "version": "0.0.2",
     "offline_enabled": true,
 

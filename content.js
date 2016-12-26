@@ -77,6 +77,29 @@ chrome.runtime.onMessage.addListener(function (msg, sender, response) {
             };
         };
 
+        prevresults = '';
+
+        chrome.storage.local.get(/* String or Array */["oldresults"], function(prevresults){
+        //  items = [ { "phasersTo": "awesome" } ]
+            console.log("1st =" + prevresults);
+        });
+
+        if (prevresults) {
+            console.log("2nd =" + prevresults);
+            results = prevresults[oldresults] + results;
+        };
+        
+        chrome.storage.local.set({ "oldresults": results }, function(){
+        //  Data's been saved boys and girls, go on home
+        });
+
+        chrome.storage.local.get(/* String or Array */["oldresults"], function(oldresults){
+        //  items = [ { "phasersTo": "awesome" } ]
+            console.log("Results = " + results);
+        });
+         
+            console.log("Old" + oldresults);
+
         var domInfo = {
             contents: results,
             //total:   document.querySelectorAll('*').length,

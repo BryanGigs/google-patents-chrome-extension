@@ -9,6 +9,10 @@
         "scripts": ["background.js"]
     },
 
+    "permissions": [
+        "storage"
+    ],
+
     "content_scripts": [{
         "matches":    ["*://patents.google.com/*", "*://www.google.com/*tbm=pts*", "*://scholar.google.com/*"],
         "js":         ["content.js"],
